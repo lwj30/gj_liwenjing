@@ -1,0 +1,157 @@
+/* =============================================
+   抓小球小游戏 — 样式表
+   ============================================= */
+
+/* ---------- 全局重置 ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------- 顶部状态栏 ---------- */
+.status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.status-item .label {
+    opacity: 0.8;
+}
+
+.status-item .value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFD700;
+    min-width: 40px;
+    text-align: center;
+}
+
+#timer-display {
+    font-variant-numeric: tabular-nums;
+    min-width: 54px;
+}
+
+/* ---------- 按钮通用 ---------- */
+.btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* ---------- 游戏区域 ---------- */
+.game-area {
+    flex: 1;
+    position: relative;
+    background-color: #FFF8DC; /* Cornsilk 浅黄色 */
+    cursor: pointer;
+}
+
+/* ---------- 小球 ---------- */
+.ball {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #1E90FF; /* DodgerBlue 蓝色 */
+    border-radius: 50%;       /* 正圆形 */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* 立体感阴影 */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ball:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.ball:active {
+    transform: scale(0.95);
+}
+
+/* ---------- 结束遮罩 ---------- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 当带 hidden 属性时强制隐藏（覆盖 flex 显示） */
+.overlay[hidden] {
+    display: none !important;
+}
+
+.overlay-card {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 280px;
+}
+
+.overlay-card h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.overlay-card p {
+    font-size: 20px;
+    color: #555;
+}
+
+.overlay-card .btn-primary {
+    margin-top: 8px;
+    padding: 12px 32px;
+    font-size: 18px;
+}
