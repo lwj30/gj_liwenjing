@@ -220,3 +220,80 @@ d:\gj\
 ### 11.7 待确认签名
 
 > 请阅读 V2 扩展需求（第 11 节），如无异议请回复"确认"，将进入阶段 2：writing-plans 任务拆解。
+
+---
+
+# V3 扩展需求（2026-10-22，图标展示页面）
+
+## 12. V3 需求：Font Awesome + Lucide 图标对比页
+
+### 12.1 项目背景
+
+在已有抓小球游戏项目（首页 index.html）基础上，新增两个图标展示页面，对比演示两种主流图标方案：**字体图标（Font Awesome）** vs **内联 SVG（Lucide）**。所有 CDN 资源下载到本地 `cdn/` 目录，离线可用。
+
+### 12.2 交付物
+
+| 文件 | 说明 |
+|------|------|
+| `iconfont-1.html` | Font Awesome 图标页（**字体图标方式**：CSS 类名 + webfont 文件） |
+| `iconfont-2.html` | Lucide 图标页（**SVG 方式**：`lucide.min.js` + `createIcons()` 生成内联 SVG） |
+| `cdn/fontawesome/css/all.min.css` | FA 6 免费版样式（下载到本地） |
+| `cdn/fontawesome/webfonts/*.woff2` | FA 字体文件（solid/regular/brands） |
+| `cdn/lucide/lucide.min.js` | Lucide UMD 版 JS 库（下载到本地） |
+
+### 12.3 页面内容（两页对称）
+
+- 各展示 **12~16 个常用图标**，网格布局，每个图标下方标注名称
+- 两页**图标语义一一对应**（便于对比两种方案的视觉差异）：
+
+| 语义 | Font Awesome 类名 | Lucide 名称 |
+|------|------------------|-------------|
+| 首页 | `fa-solid fa-house` | `home` |
+| 用户 | `fa-solid fa-user` | `user` |
+| 搜索 | `fa-solid fa-magnifying-glass` | `search` |
+| 设置 | `fa-solid fa-gear` | `settings` |
+| 爱心 | `fa-solid fa-heart` | `heart` |
+| 星星 | `fa-solid fa-star` | `star` |
+| 铃铛 | `fa-solid fa-bell` | `bell` |
+| 相机 | `fa-solid fa-camera` | `camera` |
+| 下载 | `fa-solid fa-download` | `download` |
+| 删除 | `fa-solid fa-trash-can` | `trash-2` |
+| 对勾 | `fa-solid fa-circle-check` | `circle-check` |
+| 关闭 | `fa-solid fa-xmark` | `x` |
+| 加号 | `fa-solid fa-plus` | `plus` |
+| 编辑 | `fa-solid fa-pen` | `pen` |
+| 信息 | `fa-solid fa-circle-info` | `info` |
+| 警告 | `fa-solid fa-triangle-exclamation` | `triangle-alert` |
+
+> 实现时以实际下载的库版本为准校验图标名是否存在（Lucide 新旧版本命名有差异，新版本兼容别名）。
+
+### 12.4 视觉设计
+
+- **沿用游戏风格**：浅黄背景 `#FFF8DC` + 深色顶部栏 `#333`
+- 顶部栏左侧：**返回首页链接** `<a href="index.html">← 返回首页</a>`（项目规则 2），右侧页面标题
+- 图标网格：Flex 换行布局，每个图标项为卡片（白底圆角阴影），图标 32px + 下方名称 12px
+- 顶部栏下方加一行说明文字：标注本页使用的技术方案（字体图标 / 内联 SVG）
+
+### 12.5 命名与工程规则
+
+- 所有 CSS 类名、id、JS 变量以 `lwj_` 开头（如 `lwj_icon-grid`、`lwj_icon-card`、`#lwj_back-link`）
+- 页面样式内联在各自 HTML 的 `<style>` 标签中（单文件页面，不新增公共 CSS 文件）
+- 图标名称等库自带类名（`fa-solid`、`fa-house`）不受 `lwj_` 规则约束
+
+### 12.6 验收要点
+
+1. 两页离线可开（双击 html，无网络图标也正常显示）
+2. iconfont-1.html：16 个 FA 图标全部渲染为字体图标（DevTools 看是 `::before` + font-family: "Font Awesome 6 Free"）
+3. iconfont-2.html：16 个 Lucide 图标全部渲染为内联 `<svg>` 元素（DevTools 可直接看到 svg 标签）
+4. 两页顶部均有返回首页链接且可点击跳转
+5. 两页视觉风格与 index.html 统一
+
+### 12.7 V3 Out of Scope
+
+- 图标搜索/筛选功能
+- 图标尺寸/颜色变体演示
+- 响应式移动端适配
+
+### 12.8 待确认签名
+
+> 请阅读 V3 需求（第 12 节），如无异议请回复"确认"，将进入阶段 2：writing-plans 任务拆解。
