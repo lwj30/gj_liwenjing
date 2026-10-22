@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Font Awesome 字体图标演示</title>
+<link rel="stylesheet" href="cdn/fontawesome/css/all.min.css">
+<style>
+  body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .lwj_container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  .lwj_title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .lwj_subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .lwj_section {
+    margin-bottom: 30px;
+  }
+  .lwj_section h3 {
+    color: #555;
+    border-left: 4px solid #667eea;
+    padding-left: 10px;
+    margin-bottom: 15px;
+  }
+  .lwj_icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+  .lwj_icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: all .25s;
+    cursor: pointer;
+    background: #fafafa;
+  }
+  .lwj_icon-item:hover {
+    background: #667eea;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102,126,234,.4);
+  }
+  .lwj_icon-item i {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .lwj_icon-item span {
+    font-size: 12px;
+    color: #666;
+  }
+  .lwj_icon-item:hover span {
+    color: #fff;
+  }
+  .lwj_back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: #667eea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background .2s;
+  }
+  .lwj_back-link:hover {
+    background: #5568d3;
+  }
+  .lwj_back-link i {
+    margin-right: 6px;
+  }
+  .lwj_footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+<div class="lwj_container">
+  <h1 class="lwj_title"><i class="fa-solid fa-star" style="color:#f59e0b"></i> Font Awesome 字体图标演示</h1>
+  <p class="lwj_subtitle">使用字体图标方式加载 · Font Awesome 6.5.1 免费版</p>
+
+  <!-- Solid 实心图标 -->
+  <div class="lwj_section">
+    <h3>Solid 实心图标 (fa-solid)</h3>
+    <div class="lwj_icon-grid">
+      <div class="lwj_icon-item"><i class="fa-solid fa-house"></i><span>fa-house</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-user"></i><span>fa-user</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-envelope"></i><span>fa-envelope</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-phone"></i><span>fa-phone</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-heart"></i><span>fa-heart</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-camera"></i><span>fa-camera</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-music"></i><span>fa-music</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-cloud"></i><span>fa-cloud</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-bolt"></i><span>fa-bolt</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-rocket"></i><span>fa-rocket</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-code"></i><span>fa-code</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-gift"></i><span>fa-gift</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-magnifying-glass"></i><span>fa-search</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-bell"></i><span>fa-bell</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-gear"></i><span>fa-gear</span></div>
+      <div class="lwj_icon-item"><i class="fa-solid fa-map-location-dot"></i><span>fa-map</span></div>
+    </div>
+  </div>
+
+  <!-- Regular 常规图标 -->
+  <div class="lwj_section">
+    <h3>Regular 常规图标 (fa-regular)</h3>
+    <div class="lwj_icon-grid">
+      <div class="lwj_icon-item"><i class="fa-regular fa-heart"></i><span>fa-heart</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-star"></i><span>fa-star</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-envelope"></i><span>fa-envelope</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-user"></i><span>fa-user</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-bookmark"></i><span>fa-bookmark</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-calendar"></i><span>fa-calendar</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-comment"></i><span>fa-comment</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-copy"></i><span>fa-copy</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-file"></i><span>fa-file</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-image"></i><span>fa-image</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-lightbulb"></i><span>fa-lightbulb</span></div>
+      <div class="lwj_icon-item"><i class="fa-regular fa-moon"></i><span>fa-moon</span></div>
+    </div>
+  </div>
+
+  <!-- Brands 品牌图标 -->
+  <div class="lwj_section">
+    <h3>Brands 品牌图标 (fa-brands)</h3>
+    <div class="lwj_icon-grid">
+      <div class="lwj_icon-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-weixin"></i><span>微信</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-weibo"></i><span>微博</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-chrome"></i><span>Chrome</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-firefox-browser"></i><span>Firefox</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-java"></i><span>Java</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+      <div class="lwj_icon-item"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+    </div>
+  </div>
+
+  <div class="lwj_footer">
+    <a href="index.html" class="lwj_back-link"><i class="fa-solid fa-arrow-left"></i>返回首页</a>
+  </div>
+</div>
+
+<script>
+  // 点击图标复制类名到剪贴板
+  var lwj_items = document.querySelectorAll('.lwj_icon-item');
+  lwj_items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var lwj_i = item.querySelector('i');
+      var lwj_classes = lwj_i.className;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(lwj_classes).then(function() {
+          alert('已复制类名：' + lwj_classes);
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
