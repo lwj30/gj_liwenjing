@@ -20,6 +20,28 @@
 - Every new HTML page must link back to `index.html`; existing icon pages put this link in the footer.
 - User-facing copy and code comments are Chinese. Keep that voice.
 - Game CSS stays in `style.css`. Icon pages keep their styles inline in `<style>` on purpose (single-file pages); do not extract shared CSS.
+- **新建 HTML 文件必须包含规范注释**：每个新建的 HTML 页面顶部添加文件头注释；JS 部分的每个主要函数/模块必须添加功能注释。注释模板见下方。
+  - **HTML 文件头注释**（放在 `<!DOCTYPE html>` 之后、`<html>` 之前）：
+    ```html
+    <!--
+      作者：李汶静
+      创建时间：YYYY-MM-DD HH:MM
+      使用模型：Trae-Proprietary
+      功能：<一句话简介本页用途>
+    -->
+    ```
+  - **JS 函数注释**（放在每个 `function xxx()` 或箭头函数定义上方）：
+    ```js
+    /**
+     * [功能名称]
+     * @desc <一句话说明这个函数做什么、为什么存在>
+     * @param {类型} 参数名 - 参数说明（如果有参数）
+     * @returns {类型} 返回值说明（如果有返回值）
+     * @author 李汶静
+     * @created YYYY-MM-DD
+     */
+    ```
+  - 注释语言为中文；已有的老文件不回溯补注释，仅对新建文件生效。
 - Git remote is Gitee, branch is `master`, commit messages use the `lwj_` prefix. Commit/push only when asked; the submission procedure is in `.trae/skills/submit-project/SKILL.md`.
 
 ## Game architecture (`script.js`)
