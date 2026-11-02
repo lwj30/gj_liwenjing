@@ -51,15 +51,14 @@
     /* 第一个按钮去掉左侧分隔线 */
     .lwj-tab-item:first-child { border-left: none; }
 
-    /* ====== 激活态（还原参考图的深蓝左边框 + 粗体深色文字） ====== */
+    /* ====== 激活态（一比一还原参考图：红色顶条 + 粗体深色文字） ====== */
     .lwj-tab-item.lwj-tab-active {
       color: #1a252f;                     /* 激活：深色文字 */
       font-weight: 700;
       border-left: 1px solid #e8e8e8;     /* 保留分隔线 */
-      border-top: 3px solid #1a252f;      /* 顶部深蓝色横线（参考图视觉主特征） */
-      background: #fafafa;                /* 轻微底色区分 */
+      border-top: 3px solid #d93025;       /* 顶部红色短横线 —— 参考图核心红 */
+      background: #fafafa;
     }
-    /* 激活项覆盖掉左侧分隔线：让深蓝色顶条视觉上贯通 */
     .lwj-tab-item.lwj-tab-active:first-child { border-left: none; }
 
     /* hover 效果 */
@@ -116,8 +115,16 @@
     }
     .lwj_news-list li a:hover { color: #1a252f; text-decoration: underline; }
 
+    /* ====== 每个面板首行红色突出（一比一还原参考图） ====== */
+    .lwj_news-list li:first-child a {
+      color: #d93025;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .lwj_news-list li:first-child a:hover { text-decoration: underline; }
+
     .lwj_news-date {
-      color: #aaa;
+      color: #aaa;                         /* 日期灰色 */
       font-size: 13px;
       flex-shrink: 0;
     }
