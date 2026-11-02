@@ -12,6 +12,15 @@
  * @author 李汶静
  * @created 2026-11-02
  */
+//DOM查找方式
+//按 id 找
+//按 class 找
+//按标签名找
+//按 name 属性找
+//通过选择器查找
+//5. querySelector —— 返回**第一个**匹配的元素
+//6. querySelectorAll —— 返回**所有**匹配的元素
+
 (function (global) {
   'use strict';
 
